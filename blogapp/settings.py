@@ -25,7 +25,8 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = os.getenv("SECRET_KEY", 'django-insecure-p0!19!y66*1^8og4ss9r_u=gjj-dpry13r67@p%x!xvgo$zccv')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("IS_DEVELOPMENT", True)
+DEBUG = os.getenv("IS_DEVELOPMENT", True) == 'True'
+
 
 ALLOWED_HOSTS = [os.getenv("APP_HOST"),
                  "http://localhost"]
