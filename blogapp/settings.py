@@ -27,12 +27,14 @@ SECRET_KEY = os.getenv("SECRET_KEY", 'django-insecure-p0!19!y66*1^8og4ss9r_u=gjj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("IS_DEVELOPMENT", True) == 'True'
 
+# DEBUG = True
+
+# ALLOWED_HOSTS = ['*']
 
 ALLOWED_HOSTS = [os.getenv("APP_HOST"),
                  "http://localhost"]
 
 
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.auth',
@@ -152,5 +154,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
 AWS_S3_SECRET_ACCESS_KEY = os.getenv ('AWS_S3_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv ('AWS_STORAGE_BUCKET_NAME')
+
 AWS_QUERYSTRING_AUTH = False
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'

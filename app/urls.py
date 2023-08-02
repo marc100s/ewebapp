@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name="index"),
-    # path('pages', views.pages, name="pages")
     path('post/<slug:slug>',views.post_page,name='post_page'),
     path('tag/<slug:slug>',views.tag_page,name='tag_page'),
     path('author/<slug:slug>',views.author_page,name='author_page'),
@@ -15,5 +14,4 @@ urlpatterns = [
     path('all_bookmarked_posts',views.all_bookmarked_posts,name='all_bookmarked_posts'),
     path('all_posts',views.all_posts,name='all_posts'),
     path('all_liked_posts',views.all_liked_posts,name='all_liked_posts')
-
 ]
