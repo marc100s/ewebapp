@@ -83,7 +83,8 @@ def post_page(request, slug):
     
     #sidebar
     recent_posts = Post.objects.exclude(id= post.id).order_by('-last_updated')[0:3]
-    top_authors = User.objects.annotate(number = Count('post')).order_by('-number')
+    # top_authors = User.objects.annotate(number = Count('post')).order_by('-number')
+    top_authors = User.objects.annotate(number=Count('post')).filter(profile__slug__isnull=False).order_by('-number')
     tags = Tag.objects.all()
     related_posts = Post.objects.exclude(id= post.id).filter(author = post.author)[0:3]
     
